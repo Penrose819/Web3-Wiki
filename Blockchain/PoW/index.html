@@ -9,17 +9,13 @@
       
       
       
-        <link rel="prev" href="../Intro/">
-      
-      
-        <link rel="next" href="../../ZK/Intro/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>Cryptographic Premitive - Web3 Wiki</title>
+        <title>PoW and Nakamoto Consensus - Web3 Wiki</title>
       
     
     
@@ -67,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cryptographic-premitives" class="md-skip">
+        <a href="#pow-and-nakamoto-consensus" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cryptographic Premitive
+              PoW and Nakamoto Consensus
             
           </span>
         </div>
@@ -199,16 +195,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
       
@@ -217,7 +211,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Blockchain
@@ -242,87 +236,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cryptographic Premitive
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Crypto/" class="md-nav__link">
         Cryptographic Premitive
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hash-functions" class="md-nav__link">
-    Hash Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cryptographic-hash-functions" class="md-nav__link">
-    Cryptographic Hash Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#blockchain-technology" class="md-nav__link">
-    Blockchain Technology
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merkle-trees" class="md-nav__link">
-    Merkle Trees
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#block-as-a-ledger-and-digital-signature" class="md-nav__link">
-    Block as a Ledger and Digital Signature
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -501,56 +419,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hash-functions" class="md-nav__link">
-    Hash Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cryptographic-hash-functions" class="md-nav__link">
-    Cryptographic Hash Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#blockchain-technology" class="md-nav__link">
-    Blockchain Technology
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merkle-trees" class="md-nav__link">
-    Merkle Trees
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#block-as-a-ledger-and-digital-signature" class="md-nav__link">
-    Block as a Ledger and Digital Signature
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -564,42 +432,7 @@
                   
 
 
-<h1 id="cryptographic-premitives">Cryptographic Premitives</h1>
-<p>A hash function is a mathematical function that maps input data of arbitrary size to a fixed-size output called a hash value:</p>
-<p><span class="arithmatex">\(H(x) :\{ 0,1 \}^{*} \rightarrow \{ 0,1 \}^{l}\)</span></p>
-<p>In recent years, cryptographic hash functions are widely used in the area of blockchain technology. Then we will introduce the definition and properties of cryptographic hash functions, as well as their usages.</p>
-<h2 id="hash-functions">Hash Functions</h2>
-<p>A hash function is a function that takes input data of arbitrary size and outputs a fixed-size hash value. It's a one-way function that generates the same output for the same input every time. </p>
-<p>Hash functions are commonly used in computer science for data indexing and searching, particularly in <strong>hash tables</strong>. A hash table is a key-value store where the value can be of any data type. The hash function maps each key to a unique index in an array, allowing for fast access to the value associated with a particular key.</p>
-<p><img alt="" src="../image/hash-table.png" /></p>
-<p>A good hash function should have following properties:</p>
-<ul>
-<li>Arbitrary sized inputs</li>
-<li>Fixed size deterministic output</li>
-<li>Efficiently computable</li>
-<li>Minimize collisions </li>
-</ul>
-<p>SHA-256 is an example of a hash function that outputs a 256-bit hash value. While SHA-256 does not have provable security, it is used in the <strong>random oracle model</strong>, which assumes an arbitrary random k-bit string for any input with a uniform distribution.</p>
-<h2 id="cryptographic-hash-functions">Cryptographic Hash Functions</h2>
-<p>Cryptographic hash functions have additional properties that <strong>easy to compute but difficult to invert</strong>. The only way to find the input is through brute force search. </p>
-<p>The <strong>Merkle-Damgard</strong> construction is a widely used technique to construct a cryptographic hash function. The construction uses a compression function recursively to create a hash function that can take input data of any size.</p>
-<p>Cryptographic hash functions have various applications, including <strong>digital commitment</strong>, <strong>hash pointers</strong>, and <strong>hash puzzles</strong>：</p>
-<ul>
-<li>A commitment is a sealed envelope that contains a message that cannot be changed once committed. </li>
-<li>A hash pointer is a pointer to the value stored in the hash table. </li>
-<li>Hash puzzles are used to find inputs that produce a hash value less than a certain threshold. The input to the hash puzzle is called a <strong>nonce</strong>, and it is hard to compute but easy to verify.</li>
-</ul>
-<h2 id="blockchain-technology">Blockchain Technology</h2>
-<p>A blockchain is a linked list data structure that uses hash pointers to connect blocks of data. A block in a blockchain consists of a <strong>header</strong> and <strong>data</strong>. The header contains the hash value of the previous block, a timestamp, and other metadata. The hash value of the previous block connects the current block to the previous block, forming a chain of blocks. The sequence of ancestors of blocks is tamper-proof, making blockchains ideal for secure data storage.</p>
-<h2 id="merkle-trees">Merkle Trees</h2>
-<p>A Merkle tree is a binary tree where each parent node consists of the hash pointers to its children. Merkle trees are used in blockchain technology to allow for efficient verification of data. Instead of storing all the data in each block, the Merkle tree only stores the <strong>root hash value</strong>. Verifying the integrity of a block's data involves checking the hash value of each leaf node in the Merkle tree and comparing it to the root hash value.</p>
-<p><img alt="" src="../image/tree.png" /></p>
-<h2 id="block-as-a-ledger-and-digital-signature">Block as a Ledger and Digital Signature</h2>
-<p>A block in a blockchain can be seen as a ledger that records an ordered list of data values. <strong>Digital signatures</strong> can be used to ensure the integrity of the data in a block. </p>
-<p>Digital signatures are generated using a secret key <span class="arithmatex">\(sk\)</span> and can be verified using the corresponding public key <span class="arithmatex">\(pk\)</span>. The public key becomes <strong>the user's identity</strong> in the system. The Elliptic Curve Digital Signature Algorithm (ECDSA) is a widely used scheme for generating digital signatures in blockchain technology.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Cryptographic hash functions are expected to be efficiently computable and collision resistant. They can be used to construct blockchains and Merkle trees, which are tamper-proof data structures. </p>
-<p>Digital signatures parallel hand-written signatures and thereby provide authenticated communication. All messages that are exchanged in a blockchain system are signed. Blockchain can maintain a centralized ledger, with a central authority writing to the ledger and multiple parties reading from it. </p>
+<h1 id="pow-and-nakamoto-consensus">PoW and Nakamoto Consensus</h1>
 
 
 
