@@ -302,9 +302,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Introduction
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-proof" class="md-nav__link">
+    Interactive Proof
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zero-knowledge" class="md-nav__link">
+    Zero Knowledge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complexity-theory" class="md-nav__link">
+    Complexity Theory
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -435,6 +487,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-proof" class="md-nav__link">
+    Interactive Proof
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zero-knowledge" class="md-nav__link">
+    Zero Knowledge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complexity-theory" class="md-nav__link">
+    Complexity Theory
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -449,6 +537,66 @@
 
 
 <h1 id="brief-introduction-to-zero-knowledge">Brief Introduction to Zero Knowledge</h1>
+<h2 id="interactive-proof">Interactive Proof</h2>
+<p>Zero-knowledge proofs (ZKP) are a powerful cryptographic tool that allow one party (<strong>the prover</strong>) to convince another party (<strong>the verifier</strong>) that a statement is true, without revealing any additional information beyond the statement's validity.</p>
+<p>To understand zkp, it's helpful to first consider interactive proofs, involving interaction between the prover and verifier. We only consider <strong>efficiently verifiable proofs</strong>, a type of interactive proof using a verification string to confirm the validity of a statement. The verification string  <span class="arithmatex">\(w = poly(|x|)\)</span>, and the  verification time <span class="arithmatex">\(t =poly(|x|)\)</span>.</p>
+<p><img alt="" src="../img/poly.png" /></p>
+<p>ZKP is applied to NP languages, which are those that can be verified in polynomial time. The verifier must be able to confirm the truthfulness of a statement and reject false statements. This is known as <strong>completeness</strong> and <strong>soundness</strong>, respectively:</p>
+<ul>
+<li><span class="arithmatex">\(\forall x  \in L,\exists w ,V(x,w) = 1\)</span></li>
+<li><span class="arithmatex">\(\forall x  \notin L,\forall  w ,V(x,w) = 0\)</span></li>
+</ul>
+<p>Interactive proof involves two additional ingredients: <strong>randomness</strong> and <strong>interaction</strong>:</p>
+<ul>
+<li>
+<p>Randomness: Verifier is randomized, and the verifier can also have an error with negligible probability
+  $$
+  Pr[(P,V)(x) = accept] \leq negl(\lambda)
+  $$</p>
+</li>
+<li>
+<p>Interaction: Prover interact with the verifier.</p>
+</li>
+</ul>
+<p>This class of language which has an interactive proof is called <strong>IP language</strong>.</p>
+<h2 id="zero-knowledge">Zero Knowledge</h2>
+<p>The goal of zkp is to allow the verifier to gain no knowledge beyond the validity of the statement being proven. After the interactive proof, the verifier can only obtain the true value and the view of the interactions:
+$$
+View = (q_{1},a_{1},q_{2},a_{2},...)
+$$
+The simulation paradigm allows the verifier to simulate a view, which is <strong>indistinguishable</strong> from the real view. This is achieved through computational indistinguishability, where two distributions are considered indistinguishable if they can only be differentiated with negligible probability <span class="arithmatex">\(negl(\lambda)\)</span>.</p>
+<p>We write it formally as follows:
+$$
+View(P,V)(x) \approx Sim(x,1^{\lambda})
+$$
+There are different flavors of zkp, such as computational indistinguishable, perfect identical, and statistical close distribution zkp. These are distinguished based on the degree of similarity between the simulated and real views.</p>
+<h2 id="application">Application</h2>
+<p>Zkp has practical applications in <strong>proving properties about messages without revealing the message itself</strong>, or in computing a function of two parties' inputs without disclosing their inputs to each other (secure 2-party computation).</p>
+<p><img alt="" src="../img/app.png" /></p>
+<h2 id="complexity-theory">Complexity Theory</h2>
+<p>In complexity theory, zkp is considered the <strong>randomized analogue</strong> to the NP class. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>No Randomization</th>
+<th><strong>With Randomizations</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Efficiently Solvable</td>
+<td><strong>P</strong> (Polynomial time)</td>
+<td><strong>BPP</strong> (Bounded-error Probabilistic Polynomial time)</td>
+</tr>
+<tr>
+<td>Efficiently Verifiable</td>
+<td><strong>NP</strong> (Non-deterministic Polynomial time)</td>
+<td><strong>IP</strong> (Interactive Polynomial time)</td>
+</tr>
+</tbody>
+</table>
+<p>Computer scientist has proved that IP is greater than NP. Furthermore, we can use <strong>Arthur-Merlin game</strong> to simplify ZKP, in which the verifier only need to compute a decision function. We can also use <strong>Fiat-Shamir</strong> paradigm removes the need for interaction in the verification process.</p>
 
 
 
